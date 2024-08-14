@@ -1,0 +1,32 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Sdon2\\GitAutoDeploy\\": "src/",
+            "Sdon2\\GitAutoDeploy\\Test\\": "test/"
+        }
+    },
+    "name": "sdon2/git-autodeploy",
+    "description": "This project allows a git repo to be automatically deployed based on events triggered by a webhook",
+    "type": "project",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Saravanakumar Arumugam",
+            "email": "saravanakumar.a.o@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "friendsofphp/php-cs-fixer": "^3.9"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit test \"$@\""
+    },
+    "require": {
+        "ramsey/uuid": "^4.2",
+        "monolog/monolog": "^2.9",
+        "php-di/php-di": "^6.3",
+        "symfony/yaml": "^5.4",
+        "guzzlehttp/guzzle": "^7.8"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "debug_level": "WARNING",
+    "website": "https://current-hosted-site-for-autopush.org",
+    "IPsAllowList": [
+        "X.Y.Z.W"
+    ],
+    "SSHKeysPath": "/home/myusername/.ssh",
+    "ReposBasePath": "/var/www",
+    "repos_template_uri": "git@github.com:testuser/{$repo_key}.git",
+    "custom_commands": {
+        "repo_name": [
+            "ls /home",
+            "cd $ReposBasePath/$repo",
+            "GIT_SSH_COMMAND=\"ssh -i $SSHKeysPath/$key \" git fetch origin"
+        ]
+    },
+    "log_request_body": false,
+    "expose_raw_log": false,
+    "github_meta_api_url": "https://api.github.com/meta",
+    "github_ranges_lists": ["actions", "hooks"],
+    "secrets": {
+        "github_ghcr_token":"my secret token",
+        "github_ghcr_username":"myusername"
+    },
+    "whitelisted_command_strings": ["$(git symbolic-ref --short HEAD)"]
+}
